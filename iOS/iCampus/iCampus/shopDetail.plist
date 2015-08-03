@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>shopId</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>小朵颐</string>
+		<key>telephone</key>
+		<string>13162937158</string>
+		<key>image</key>
+		<string>xiaoduoyi.jpg</string>
+	</dict>
+	<dict>
+		<key>shopId</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>湘粤阁</string>
+		<key>telephone</key>
+		<string>13801779880</string>
+		<key>image</key>
+		<string>xiangyuege.jpg</string>
+	</dict>
+</array>
+</plist>

@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func equalBtn(sender: AnyObject) {
+//        TODO: equal button
     }
     @IBAction func clearBtn(sender: AnyObject) {
         resultLabel.text = "";

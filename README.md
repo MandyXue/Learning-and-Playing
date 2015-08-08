@@ -8,11 +8,12 @@
 ###1、iOS（Objective-C，Swift）
 ####stanford课程：iOS 7
 ####stanford课程：iOS 8
-####计算器（swift）
+####自己实现的计算器（swift）
 - [x] autolayout
-- [ ] 计算器UI设计
-- [ ] 计算器的各种功能
-- [ ] 科学计算（呵呵＝。＝）
+- [x] 计算器UI设计
+- [x] 表达式计算
+- [ ] 负数支持
+- [ ] 错误输入支持
 
 ###2、前后端（PHP，JS）
 ####简单地图和后端连接

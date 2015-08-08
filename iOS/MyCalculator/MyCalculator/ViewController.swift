@@ -72,12 +72,10 @@ class ViewController: UIViewController {
     }
     //等于符号响应
     @IBAction func equalBtn(sender: AnyObject) {
-        //先将取出
         let characters = getCharacterWithString()
         let sufExp = getSuffixExpressionWithString(characters)
         let result = getResultWithSuffixExpression(sufExp)
-        print(result)
-        resultLabel.text = "\(result)"
+        resultLabel.text = "\(numberFormat(result))"
     }
     //C符号响应
     @IBAction func clearBtn(sender: AnyObject) {
@@ -151,7 +149,6 @@ class ViewController: UIViewController {
                 }
                 continue
             }
-            print("postExp: \(postExp)")
         }
         //如果栈中还有符号元素，则把它们全部取出，放入postExp数组中
         while(sqStack.count()>0)
@@ -159,7 +156,6 @@ class ViewController: UIViewController {
             let temp = sqStack.pop()
             postExp.append(temp)
         }
-        print("postExp: \(postExp)")
         return postExp
     }
     
@@ -170,7 +166,6 @@ class ViewController: UIViewController {
             if((ch >= "0" && ch <= "9" ) || ch == "."){
                 //数字的话压入栈中
                 numQue.push(ch)
-                print("number queue: \(numQue.items)")
                 continue
             }else{
                 //只有当number queue中有内容时，才能转化为数字（刚开始没考虑到这个所以不能进行整个表达式的计算）
@@ -186,11 +181,9 @@ class ViewController: UIViewController {
                         continue
                     }
                 }
-                if(opStack.count()>0){
-                    print("opstack: \(opStack.items)")
+                if(opStack.count()>1){
                     let op2 = opStack.pop()
                     let op1 = opStack.pop()
-                    print("ch: \(ch)")
                     switch(ch){
                         case "+" : opStack.push(op1 + op2)
                         case "-" : opStack.push(op1 - op2)
@@ -199,23 +192,44 @@ class ViewController: UIViewController {
                         default : print("wrong")
                     }
                 }
-                print("opstack: \(opStack.items)")
             }
         }
-        print("opstack: \(opStack.items)")
+        if(numQue.count()>0){
+            var str = ""
+            while(numQue.count()>0){
+                str.append(numQue.pop())
+            }
+            let temp = NSString(string: str)
+            opStack.push(temp.doubleValue)
+        }
         return opStack.pop()
     }
     
-    //Character扩展函数代码
-    func toInt(ch: Character) -> Int
-        {
-            var intFromCharacter:Int = 0
-            for i in String(self).utf8
-            {
-                intFromCharacter = Int(i)
-            }
-            return intFromCharacter
+    func numberFormat(num: Double) -> String{
+        let temp = NSString(format: "%f", num)
+        let string = String(temp)
+        var array = [Character]()
+        for ch in string.characters{
+            array.append(ch)
         }
+        for var i = array.count-1 ; i>0 ; i=i-1{
+            if(array[i] == "0"){
+                array.removeAtIndex(i)
+                continue
+            }else if(array[i] == "."){
+                array.removeAtIndex(i)
+                break
+            }else{
+                break
+            }
+        }
+        var str = ""
+        for ch in array{
+            str.append(ch)
+        }
+        
+        return str
+    }
     
     //MARK: button methods
     private func initBtns(){

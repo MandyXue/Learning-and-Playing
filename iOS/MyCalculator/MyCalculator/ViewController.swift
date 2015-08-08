@@ -50,7 +50,7 @@ struct Queue<T>{
 }
 
 class ViewController: UIViewController {
-    //MARK: button actions
+    //MARK: UI settings
     //展示结果
     @IBOutlet weak var resultLabel: UILabel!
     
@@ -58,6 +58,7 @@ class ViewController: UIViewController {
     @IBOutlet var buttonCollection: [UIButton]!
     @IBOutlet weak var greenBtn: UIButton!
     
+    //MARK: button actions
     //除了“C”,“=”,“后退”以外的符号响应
     @IBAction func targetBtn(sender: AnyObject) {
         let temp = sender.currentTitle!
@@ -71,7 +72,7 @@ class ViewController: UIViewController {
     }
     //等于符号响应
     @IBAction func equalBtn(sender: AnyObject) {
-        //初始化栈
+        //先将取出
         let characters = getCharacterWithString()
         let sufExp = getSuffixExpressionWithString(characters)
         let result = getResultWithSuffixExpression(sufExp)
@@ -89,20 +90,7 @@ class ViewController: UIViewController {
         initBtns()
     }
     
-    //MARK: stack methods
-//    private func initStack() -> Stack<Character>{
-//        var stack = Stack<Character>()
-//        if(resultLabel.text! != ""){
-//            for character in resultLabel.text!.characters {
-//                stack.push(character)
-//            }
-//        }
-////        for _ in 0..<stack.count(){
-////            print("stack: \(stack.pop())")
-////        }
-//        return stack
-//    }
-    
+    //MARK: calculate methods
     private func getCharacterWithString() -> [Character]{
         var chs = [Character]()
         if(resultLabel.text! != ""){
@@ -182,31 +170,36 @@ class ViewController: UIViewController {
             if((ch >= "0" && ch <= "9" ) || ch == "."){
                 //数字的话压入栈中
                 numQue.push(ch)
+                print("number queue: \(numQue.items)")
                 continue
             }else{
-                //“#”即判断数字结束，这时候计算数字并将其压入opStack
-                var str = ""
-                while(numQue.count()>0){
-                    str.append(numQue.pop())
-                }
-                let temp = NSString(string: str)
-                opStack.push(temp.doubleValue)
-                print("opstack: \(opStack.items)")
-                if(ch == "#"){
-                    continue
-                }
-                if(opStack.count()>0){
-                    let op2 = opStack.pop()
-                    let op1 = opStack.pop()
-                    switch(ch){
-                    case "+" : opStack.push(op1 + op2)
-                    case "-" : opStack.push(op1 - op2)
-                    case "*" : opStack.push(op1 * op2)
-                    case "/" : opStack.push(op1 / op2)
-                    default : print("wrong")
+                //只有当number queue中有内容时，才能转化为数字（刚开始没考虑到这个所以不能进行整个表达式的计算）
+                if(numQue.count()>0){
+                    var str = ""
+                    while(numQue.count()>0){
+                        str.append(numQue.pop())
+                    }
+                    let temp = NSString(string: str)
+                    opStack.push(temp.doubleValue)
+                    //“#”即判断数字结束，这时候计算数字并将其压入opStack
+                    if(ch == "#"){
+                        continue
                     }
                 }
-                
+                if(opStack.count()>0){
+                    print("opstack: \(opStack.items)")
+                    let op2 = opStack.pop()
+                    let op1 = opStack.pop()
+                    print("ch: \(ch)")
+                    switch(ch){
+                        case "+" : opStack.push(op1 + op2)
+                        case "-" : opStack.push(op1 - op2)
+                        case "*" : opStack.push(op1 * op2)
+                        case "/" : opStack.push(op1 / op2)
+                        default : print("wrong")
+                    }
+                }
+                print("opstack: \(opStack.items)")
             }
         }
         print("opstack: \(opStack.items)")

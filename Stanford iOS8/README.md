@@ -5,52 +5,18 @@ Just some notes for reviewing and memorizing
 
 ##What's in iOS (Four Layers)
 
-###Cocoa Touch
-* Multi-Touch
-* Alerts
-* Core Motion
-* View Hierachy
-* Localization
-* Map Kit
-* Image Picker
-* Controls
-* Camera
-
-###Media
-* Core Audio
-* JPEG/PNG/TIFF
-* OpenAL
-* PDF
-* Audio Mixing
-* Quartz(2D)
-* Audio Recording
-* Core Animation
-* Video Playback
-* OpenGL ES
-
-###Core Services
-* Collections
-* Core Location
-* Address Book
-* Net Services
-* Networking
-* Threading
-* File Access
-* Preferences
-* SQLite
-* URL Utilities
-
-###Core OS
-* OSX Kernel
-* Power Management
-* Mach 3.0
-* Keychain Access
-* BSD
-* Certificates
-* Sockets
-* File System
-* Security
-* Bonjour
+| Cocoa Touch     | Media             | Core Services    | Core OS           |
+| --------------- | ----------------- | ---------------- | ----------------- |
+| Multi-Touch     | Core Audio        | Collections      | OSX Kernel        |
+| Alerts          | JPEG/PNG/TIFF     | Core Location    | Power Management  |
+| Core Motion     | OpenAL            | Address Book     | Mach 3.0          |
+| View Hierachy   | PDF               | Net Services     | Keychain Access   |
+| Localization    | Audio Mixing      | Networking       | BSD               |
+| Map Kit         | Quartz(2D)        | Threading        | Certificates      |
+| Image Picker    | Audio Recording   | File Access      | Sockets           |
+| Controls        | Core Animation    | Preferences      | File System       |
+| Camera          | Video Playback    | SQLite           | Security          |
+|                 | OpenGL ES         | URL Utilities    | Bonjour           |
 
 ##Swift
 ### Advantages

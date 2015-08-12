@@ -60,4 +60,13 @@ Just some notes for reviewing and memorizing
 
 ### Characteristics
 * Single Inheritance: only inherit from one class
-* Keep All 
+* All objects, all class, the instances of classes live in the heap; the memory for them is managed for you; Swift use reference counting
+* Outlet: instance, variable, property
+* Action: method
+* let: constant
+* var: variable
+* 'let' and 'var' improves readability
+
+### Optional
+* a strong type
+* type inference

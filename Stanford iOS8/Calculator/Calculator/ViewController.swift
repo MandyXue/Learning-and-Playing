@@ -9,9 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //TODO: clear button
     @IBOutlet weak var display: UILabel!
     
     var userIsInTheMiddleOfTypingANumber: Bool = false
+    
+    var brain = CalculatorBrain()      //Model
     
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
@@ -28,44 +31,34 @@ class ViewController: UIViewController {
         if(userIsInTheMiddleOfTypingANumber){
             enter()
         }
-        switch operation {
-        case "×":performOperation { $0 * $1 }
-        case "÷":performOperation { $1 / $0 }
-        case "+":performOperation { $0 + $1 }
-        case "−":performOperation { $1 - $0 }
-        case "√":performOperation { sqrt($0) }
-        default: break
-        }
-    }
-    
-    private func performOperation(operation: (Double, Double) -> Double){
-        if(operateStack.count >= 2){
-            displayValue = operation(operateStack.removeLast(), operateStack.removeLast())
-            enter()
-        }
-    }
-    
-    private func performOperation(operation: Double -> Double){
-        if(operateStack.count >= 1){
-            displayValue = operation(operateStack.removeLast())
-            enter()
+        if let operation = sender.currentTitle{
+            if let result = brain.performOperation(operation){
+                displayValue = result
+            } else {
+                displayValue = 0
+            }
         }
     }
     
     var operateStack = Array<Double>()
     
+    
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
-        operateStack.append(displayValue)
-        print("operateStack = \(operateStack)")
+        if let result = brain.pushOperand(displayValue){
+            displayValue = result
+        } else {
+            displayValue = 0
+        }
     }
+    
+    //TODO: turning displayValue into optional
     var displayValue: Double {
         get{
             return (NSNumberFormatter().numberFromString(display.text!)?.doubleValue)!
         }
         set{
             display.text = "\(newValue)"
-            userIsInTheMiddleOfTypingANumber = false
         }
     }
 }

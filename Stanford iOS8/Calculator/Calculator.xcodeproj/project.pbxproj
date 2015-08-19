@@ -11,7 +11,7 @@
 		3302243E1B7B6EF000B41DA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3302243D1B7B6EF000B41DA6 /* ViewController.swift */; };
 		330224411B7B6EF000B41DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3302243F1B7B6EF000B41DA6 /* Main.storyboard */; };
 		330224431B7B6EF000B41DA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330224421B7B6EF000B41DA6 /* Assets.xcassets */; };
-		330224461B7B6EF000B41DA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330224441B7B6EF000B41DA6 /* LaunchScreen.storyboard */; };
+		337EBC941B84BC5000407987 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EBC931B84BC5000407987 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +20,8 @@
 		3302243D1B7B6EF000B41DA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		330224401B7B6EF000B41DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		330224421B7B6EF000B41DA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		330224451B7B6EF000B41DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		330224471B7B6EF000B41DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		337EBC931B84BC5000407987 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +57,8 @@
 				3302243B1B7B6EF000B41DA6 /* AppDelegate.swift */,
 				3302243D1B7B6EF000B41DA6 /* ViewController.swift */,
 				3302243F1B7B6EF000B41DA6 /* Main.storyboard */,
+				337EBC931B84BC5000407987 /* CalculatorBrain.swift */,
 				330224421B7B6EF000B41DA6 /* Assets.xcassets */,
-				330224441B7B6EF000B41DA6 /* LaunchScreen.storyboard */,
 				330224471B7B6EF000B41DA6 /* Info.plist */,
 			);
 			path = Calculator;
@@ -121,7 +121,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				330224461B7B6EF000B41DA6 /* LaunchScreen.storyboard in Resources */,
 				330224431B7B6EF000B41DA6 /* Assets.xcassets in Resources */,
 				330224411B7B6EF000B41DA6 /* Main.storyboard in Resources */,
 			);
@@ -134,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				337EBC941B84BC5000407987 /* CalculatorBrain.swift in Sources */,
 				3302243E1B7B6EF000B41DA6 /* ViewController.swift in Sources */,
 				3302243C1B7B6EF000B41DA6 /* AppDelegate.swift in Sources */,
 			);
@@ -148,14 +148,6 @@
 				330224401B7B6EF000B41DA6 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		330224441B7B6EF000B41DA6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				330224451B7B6EF000B41DA6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -249,6 +241,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AppleClub.MandyXue.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -260,6 +253,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AppleClub.MandyXue.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -285,6 +279,7 @@
 				3302244C1B7B6EF000B41DA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

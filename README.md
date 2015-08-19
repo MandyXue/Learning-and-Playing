@@ -10,7 +10,8 @@
 ####stanford课程：iOS 8
 - [x] 一、iOS8 概述
 - [x] 二、Xcode 、Swift和MVC  	
-- [ ] 三、应用MVC  	
+- [x] 三、应用MVC
+- [ ] Homework 1
 - [ ] 四、Swift语言与Foundation框架  	
 - [ ] 五、Objective-C 兼容性、Property List和Views  	
 - [ ] 六、协议、代理和手势  	

@@ -29,8 +29,6 @@ class CalculatorBrain {
         }
     }
     
-    //TODO: draw this to contents of it in a human readable form
-    //like 6*(4+5)
     private var opStack = [Op]()
     
     private var knownOps = [String:Op]()
@@ -49,15 +47,19 @@ class CalculatorBrain {
         learnOp(Op.UnaryOperation("cos", cos))
     }
     
+    //TODO: draw this to contents of it in a human readable form
+    //like 6*(4+5)
     private func evaluate(ops: [Op]) -> (result: Double?, remainingOps: [Op]){
         if !ops.isEmpty {
             var remainingOps = ops
             let op = remainingOps.removeLast()
+            
             switch op {
             case .Operand(let operand):
                 return (operand, remainingOps)
             case .UnaryOperation(_, let operation):
                 let operandEvaluation = evaluate(remainingOps)
+                
                 if let operand = operandEvaluation.result {
                     return (operation(operand), operandEvaluation.remainingOps)
                 }
@@ -90,5 +92,42 @@ class CalculatorBrain {
             opStack.append(operation)
         }
         return evaluate()
+    }
+    
+    func printProcess(thisResult: Double?, lastResult:Double?) -> String? {
+        var opStackCopy = opStack
+        var process:String = ""
+        if(!opStackCopy.isEmpty){
+            // get the operation
+            let op = opStackCopy.removeLast()
+            switch op {
+            case .Operand(let operand):
+                return "\(operand)"
+            case .UnaryOperation(let operation, _):
+                let operand = opStackCopy.removeLast()
+                if knownOps[operand.description] == nil{
+                    return "\(operation) \(operand) = \(thisResult!)"
+                }else{
+                    if(lastResult == nil){
+                        return nil
+                    }else{
+                        return "\(operation) \(lastResult!) = \(thisResult!)"
+                    }
+                }
+            case .BinaryOperation(let operation, _):
+                let operand1 = opStackCopy.removeLast()
+                let operand2 = opStackCopy.removeLast()
+                if knownOps[operand2.description] == nil{
+                    return "\(operand2) \(operation) \(operand1) = \(thisResult!)"
+                }else{
+                    if(lastResult == nil){
+                        return nil
+                    }else{
+                        return "\(lastResult!) \(operation) \(operand1) = \(thisResult!)"
+                    }
+                }
+            }
+        }
+        return nil
     }
 }

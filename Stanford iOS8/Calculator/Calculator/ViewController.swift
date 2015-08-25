@@ -10,11 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var display: UILabel!
-    
-    var userIsInTheMiddleOfTypingANumber: Bool = false
-    
+    //MARK: model & variables
     var brain = CalculatorBrain()      //Model
+    var userIsInTheMiddleOfTypingANumber: Bool = false
+    var operateStack = Array<Double>()
+    var lastResult: Double?
+    
+    //MARK: controllers
+    @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var result: UILabel!
     
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
@@ -33,15 +37,14 @@ class ViewController: UIViewController {
         }
         if let operation = sender.currentTitle{
             if let result = brain.performOperation(operation){
+                self.result.text = brain.printProcess(result, lastResult: lastResult)
                 displayValue = result
+                lastResult = result
             } else {
                 displayValue = 0
             }
         }
     }
-    
-    var operateStack = Array<Double>()
-    
     
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
@@ -53,43 +56,59 @@ class ViewController: UIViewController {
                 displayValue = nil
             }
         }else{
-            //if displayValue is nil, show an alert view
-            let alertController = UIAlertController(title: "Wrong input", message: "Please check if you input wrong things.", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
+            showAlert()
         }
     }
     
-    
     @IBAction func clearBtn() {
-        display.text = " "
+        display.text = ""
+        result.text = ""
         brain = CalculatorBrain()
     }
     
-    //TODO: turning displayValue into optional
+    //MARK: setter & getter
+    //finished: turning displayValue into optional
     var displayValue: Double? {
         get{
-            if((display.text!.rangeOfString("π")) != nil){
+            //use a number fomatter to convert string with a decimal point into double
+            let formatter = NSNumberFormatter()
+            formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+            
+            if(display.text! == "π"){
+                return M_PI;
+            }else if((display.text!.rangeOfString("π")) != nil){
                 var displayArray = display.text!.componentsSeparatedByString("π")
-                if(displayArray.count == 1){
-                    return (M_PI)
-                }else if (displayArray.count == 2){ //if it not only has "π", like "3π"
+                if (displayArray.count == 2){ //if it not only has "π", like "3π"
                     if(displayArray[0] == ""){
-                        return (NSNumberFormatter().numberFromString(displayArray[1])?.doubleValue)! * M_PI
+                        return (formatter.numberFromString(displayArray[1])?.doubleValue)! * M_PI
                     }else if(displayArray[1] == ""){
-                        return (NSNumberFormatter().numberFromString(displayArray[0])?.doubleValue)! * M_PI
-                    }else{
-                        return nil
+                        return (formatter.numberFromString(displayArray[0])?.doubleValue)! * M_PI
                     }
-                }else {
-                    return nil
                 }
             }
-            return (NSNumberFormatter().numberFromString(display.text!)?.doubleValue)!
+            
+            if(formatter.numberFromString(display.text!)?.doubleValue != nil){
+                return (formatter.numberFromString(display.text!)?.doubleValue)!
+            }else{
+                showAlert()
+            }
+            
+            return nil
         }
         set{
-            display.text = "\(newValue)"
+            display.text = "\(newValue!)"
         }
     }
+    
+    //MARK: customer functions
+    //alert view
+    func showAlert(){
+        //if displayValue is nil, show an alert view
+        let alertController = UIAlertController(title: "Wrong input", message: "Please check if you input wrong things.", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+        display.text = ""
+    }
+    
 }
 

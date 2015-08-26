@@ -33,7 +33,7 @@ class CalculatorBrain {
     
     private var knownOps = [String:Op]()
     
-    //TODO: add operations
+    //learn operations
     init(){
         func learnOp(op: Op){
             knownOps[op.description] = op
@@ -45,10 +45,10 @@ class CalculatorBrain {
         learnOp(Op.UnaryOperation("√", sqrt))
         learnOp(Op.UnaryOperation("sin", sin))
         learnOp(Op.UnaryOperation("cos", cos))
+        learnOp(Op.UnaryOperation("-") { -$0 })
     }
     
-    //TODO: draw this to contents of it in a human readable form
-    //like 6*(4+5)
+    //has draw this to contents of it in a human readable form
     private func evaluate(ops: [Op]) -> (result: Double?, remainingOps: [Op]){
         if !ops.isEmpty {
             var remainingOps = ops
@@ -94,6 +94,7 @@ class CalculatorBrain {
         return evaluate()
     }
     
+    //TODO: 若运算数字都取自历史怎么办？
     func printProcess(thisResult: Double?, lastResult:Double?) -> String? {
         var opStackCopy = opStack
         var process:String = ""

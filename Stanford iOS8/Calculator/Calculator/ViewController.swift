@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     //MARK: model & variables
     var brain = CalculatorBrain()      //Model
     var userIsInTheMiddleOfTypingANumber: Bool = false
-    var operateStack = Array<Double>()
-    var lastResult: Double?
+    var operateStack = [Double]()
+    var lastResult = [Double]()
     
     //MARK: controllers
     @IBOutlet weak var display: UILabel!
@@ -37,9 +37,16 @@ class ViewController: UIViewController {
         }
         if let operation = sender.currentTitle{
             if let result = brain.performOperation(operation){
-                self.result.text = brain.printProcess(result, lastResult: lastResult)
+                if (lastResult.isEmpty){
+                    self.result.text = brain.printProcess(result, lastResult: nil)
+                }else if(lastResult.count == 1){
+                    self.result.text = brain.printProcess(result, lastResult: lastResult.removeLast())
+                }else{
+                    self.result.text = brain.printProcess(lastResult.removeLast(), lastResult: lastResult.removeLast())
+                }
                 displayValue = result
-                lastResult = result
+                lastResult.append(result)
+                
             } else {
                 displayValue = 0
             }
@@ -64,6 +71,41 @@ class ViewController: UIViewController {
         display.text = ""
         result.text = ""
         brain = CalculatorBrain()
+    }
+    
+    @IBAction func backspace() {
+        if userIsInTheMiddleOfTypingANumber{
+            if (display.text! != ""){
+                display.text = dropLast(display.text!)
+            }else{
+                showAlert()
+            }
+        }else{
+            showAlert()
+        }
+    }
+    
+    @IBAction func changeSign() {
+        if userIsInTheMiddleOfTypingANumber{
+            if first(display.text!) == "-" {
+                display.text = dropFirst(display.text!)
+            }else{
+                display.text = "-" + display.text!
+            }
+        }else{
+            if let result = brain.performOperation("-"){
+                if (lastResult.isEmpty){
+                    self.result.text = brain.printProcess(result, lastResult: nil)
+                }else{
+                    self.result.text = brain.printProcess(result, lastResult: lastResult.removeLast())
+                }
+                displayValue = result
+                lastResult.append(result)
+                
+            } else {
+                displayValue = 0
+            }
+        }
     }
     
     //MARK: setter & getter

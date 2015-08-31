@@ -21,5 +21,12 @@
 ## Notes
 Just some notes for reviewing and memorizing
 
+* [Lesson 1](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%201.md)
+* [Lesson 2](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%202.md)
+* [Lesson 3](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%203.md)
+* [Lesson 5](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%205.md)
+
+
 ## Demos
-- [x] Calculator
+* Calculator
+* Happiness Face 

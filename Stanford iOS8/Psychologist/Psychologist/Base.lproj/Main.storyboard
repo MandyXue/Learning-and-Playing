@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="naz-MD-K03">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Psychologist-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PsychologistViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you see in your dreams?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="iFV-kG-WwG">
+                                <rect key="frame" x="16" y="72" width="568" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjv-P1-GCw">
+                                <rect key="frame" x="231" y="279" width="137" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Dancing Tree">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4Jw-Zs-JG7" kind="showDetail" identifier="happy" id="fg4-Ve-6Za"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0M-So-g9Y">
+                                <rect key="frame" x="233" y="230" width="132" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Golden Bear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4Jw-Zs-JG7" kind="showDetail" identifier="sad" id="QuO-Qc-tLJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwb-E5-bZa">
+                                <rect key="frame" x="254" y="328" width="91" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Buckeye">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4Jw-Zs-JG7" kind="showDetail" identifier="meh" id="AH7-QO-7zE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIJ-3n-LNt">
+                                <rect key="frame" x="272" y="384" width="54" height="30"/>
+                                <state key="normal" title="Nothing">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nothing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y72-UG-BrJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sIJ-3n-LNt" firstAttribute="top" secondItem="Nwb-E5-bZa" secondAttribute="bottom" constant="15" id="2yn-Yt-Zal"/>
+                            <constraint firstItem="Nwb-E5-bZa" firstAttribute="centerX" secondItem="Vjv-P1-GCw" secondAttribute="centerX" id="76n-jj-hvS"/>
+                            <constraint firstItem="iFV-kG-WwG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9Fg-Ga-K01"/>
+                            <constraint firstAttribute="centerY" secondItem="Vjv-P1-GCw" secondAttribute="centerY" id="BKL-oV-ITG"/>
+                            <constraint firstItem="Nwb-E5-bZa" firstAttribute="top" secondItem="Vjv-P1-GCw" secondAttribute="bottom" constant="8" symbolic="YES" id="DYD-OL-12G"/>
+                            <constraint firstItem="iFV-kG-WwG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="b5z-lp-7FV"/>
+                            <constraint firstItem="iFV-kG-WwG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="bnH-Mh-k01"/>
+                            <constraint firstItem="K0M-So-g9Y" firstAttribute="centerX" secondItem="Vjv-P1-GCw" secondAttribute="centerX" id="gng-AW-1y7"/>
+                            <constraint firstItem="iFV-kG-WwG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iUC-Xr-zAu"/>
+                            <constraint firstAttribute="centerX" secondItem="Vjv-P1-GCw" secondAttribute="centerX" id="ozO-dW-Q4i"/>
+                            <constraint firstItem="Vjv-P1-GCw" firstAttribute="top" secondItem="K0M-So-g9Y" secondAttribute="bottom" constant="8" symbolic="YES" id="s0b-6g-uec"/>
+                            <constraint firstItem="sIJ-3n-LNt" firstAttribute="centerX" secondItem="Nwb-E5-bZa" secondAttribute="centerX" id="uXP-ml-jsb"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="iUC-Xr-zAu"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Psychologist" id="JUm-bz-hj2"/>
+                    <connections>
+                        <segue destination="4Jw-Zs-JG7" kind="showDetail" identifier="nothing" id="8MI-w6-PpK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1242" y="393"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="iXI-v5-K35">
+            <objects>
+                <splitViewController id="naz-MD-K03" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="4Jw-Zs-JG7" kind="relationship" relationship="detailViewController" id="WyX-8w-oC3"/>
+                        <segue destination="hOD-eO-aaG" kind="relationship" relationship="masterViewController" id="0Oe-T6-KiO"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="of8-9i-uVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-402" y="756"/>
+        </scene>
+        <!--Diagnosed Happiness View Controller-->
+        <scene sceneID="76E-U3-GJa">
+            <objects>
+                <viewController id="O20-hm-OGv" customClass="DiagnosedHappinessViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AdT-CY-g4U"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bt8-ce-Mo7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bog-Yw-Bvn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="A3T-0B-dIy" customClass="FaceView" customModule="Psychologist" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="iuY-aK-72G" appends="YES" id="jh3-4p-P0t"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A3T-0B-dIy" firstAttribute="leading" secondItem="Bog-Yw-Bvn" secondAttribute="leading" id="DHG-u4-C6o"/>
+                            <constraint firstAttribute="trailing" secondItem="A3T-0B-dIy" secondAttribute="trailing" id="bDp-L2-mlR"/>
+                            <constraint firstItem="A3T-0B-dIy" firstAttribute="top" secondItem="Bog-Yw-Bvn" secondAttribute="top" id="c2B-aL-Aoo"/>
+                            <constraint firstItem="A3T-0B-dIy" firstAttribute="bottom" secondItem="Bt8-ce-Mo7" secondAttribute="top" id="rRc-t0-FhJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DHv-vC-M0P">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="EmN-XG-rMc">
+                            <connections>
+                                <segue destination="TIA-Dj-q3J" kind="popoverPresentation" identifier="Show Diagnostic History" popoverAnchorBarButtonItem="EmN-XG-rMc" id="izG-YM-McC">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="faceView" destination="A3T-0B-dIy" id="qVr-xG-zQQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M3H-yb-nJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="iuY-aK-72G">
+                    <connections>
+                        <action selector="changeHappiness:" destination="O20-hm-OGv" id="gU5-Xr-rSu"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1242" y="1184"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="quu-no-5Vl">
+            <objects>
+                <viewController id="TIA-Dj-q3J" customClass="TextViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6My-FO-Sh3"/>
+                        <viewControllerLayoutGuide type="bottom" id="M9c-Ie-9b8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DRb-El-oNR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTQ-Dd-9le">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gTQ-Dd-9le" firstAttribute="leading" secondItem="DRb-El-oNR" secondAttribute="leading" id="3JL-dE-nf1"/>
+                            <constraint firstItem="gTQ-Dd-9le" firstAttribute="top" secondItem="DRb-El-oNR" secondAttribute="top" id="7sN-8F-nv7"/>
+                            <constraint firstAttribute="trailing" secondItem="gTQ-Dd-9le" secondAttribute="trailing" id="Pus-Xv-uGQ"/>
+                            <constraint firstItem="gTQ-Dd-9le" firstAttribute="bottom" secondItem="M9c-Ie-9b8" secondAttribute="top" id="lmd-Db-bAB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="gTQ-Dd-9le" id="wAu-Gv-oYG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dme-Ut-4sR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953" y="1184"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yNe-Dv-GkB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hOD-eO-aaG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JN6-SY-dOJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zHX-v1-Rm0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mj0-hu-V2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="393"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qif-V0-614">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Jw-Zs-JG7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fEf-4o-nJq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O20-hm-OGv" kind="relationship" relationship="rootViewController" id="Al4-fg-sBb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K4Q-5h-WlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="1184"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8MI-w6-PpK"/>
+    </inferredMetricsTieBreakers>
+</document>

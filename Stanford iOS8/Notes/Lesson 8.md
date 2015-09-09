@@ -92,3 +92,5 @@ Already learned:
 
 In Demo:
 * Content Compression Ressistance Priority
+* Click on the constraint => Alignment Constraint (on the right): Constant, Multiplier, etc.
+* Content Hugging Priority

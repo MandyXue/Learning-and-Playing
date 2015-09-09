@@ -26,6 +26,8 @@ Just some notes for reviewing and memorizing
 * [Lesson 3](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%203.md)
 * [Lesson 5](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%205.md)
 * [Lesson 6](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%206.md)
+* [Lesson 7](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%207.md)
+* [Lesson 8](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%208.md)
 
 
 ## Demos

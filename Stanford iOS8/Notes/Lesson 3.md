@@ -5,6 +5,8 @@ Our model is completely UI independent
 it doesn’t inherit
 it doesn’t subclass any iOS class or anything
 
+=====
+
 ### Initialize an array
 not preferred, although it’s clear:
 ```swift
@@ -28,6 +30,8 @@ var knownOps = [String:Op]()
 ```
 We use a ":" here to mean dictionary
 
+=====
+
 ### Enum in Swift
 * no inheritance for enum
 * can have functions
@@ -49,6 +53,8 @@ enum Op {
 }
 ```
 
+=====
+
 ### API
 Create API for calculation:
 ```swift
@@ -56,6 +62,8 @@ func pushOperand(operand: Double){
     opStack.append(Op.Operand(operand))
 }
 ```
+
+=====
 
 ### Create an Initializer
 
@@ -73,6 +81,8 @@ init(){
     knownOps["√"] = Op.UnaryOperation("√") { sqrt($0) }
 }
 ```
+
+=====
 
 ### More about Closure
 
@@ -101,6 +111,8 @@ If you want sth. to be private you can put “private” before it.
 If you don’t put anything, it will be public in the program.
 And you only use the word public if you’re shipping out like a framework of objects to other people and you want the methods there to be public outside the framework.
 
+=====
+
 ### More about Optional
 
 If the user input wrong things that cannot be evaluated like “+” at first, we want to return sth. to tell them that they are wrong, like nil, so we use optional here:
@@ -109,6 +121,7 @@ func evaluate() -> Double?
 ```
 This is a classic case of using optional.
 
+=====
 
 ### Tuple:
 You can combine multiple things together into one kind of mini data structure called tuple.
@@ -137,6 +150,8 @@ means don’t care, like:
 ```swift
 case .UnaryOperation(_, let operation)
 ```
+
+=====
 
 ### Recursion in this Stack
 
@@ -188,6 +203,8 @@ var description: String {
     }
 }
 ```
+
+=====
 
 ### Protocol
 

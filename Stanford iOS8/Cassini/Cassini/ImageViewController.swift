@@ -31,6 +31,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             // you need to protect against the cases where outlets might be nil
             // so add a '?'
             scrollView?.contentSize = imageView.frame.size
+            spinner?.stopAnimating()
         }
     }
     
@@ -43,6 +44,8 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             scrollView.maximumZoomScale = 1
         }
     }
+    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     //MARK: delegate
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
@@ -65,12 +68,22 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     //MARK: methods
     private func fetchImage(){
         if let url = imageURL {
-            let imageData = NSData(contentsOfURL: url)
-            if imageData != nil {
-                //turn bits into image
-                image = UIImage(data: imageData!)
-            } else {
-                image = nil
+            spinner?.startAnimating()
+            //multithreading
+            let qos = Int(QOS_CLASS_USER_INITIATED.value)
+            dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
+                let imageData = NSData(contentsOfURL: url)
+                dispatch_async(dispatch_get_main_queue()) {
+                    // considering if the image comes back after you ask for the second pic
+                    if url == self.imageURL {
+                        if imageData != nil {
+                            //turn bits into image
+                            self.image = UIImage(data: imageData!)
+                        } else {
+                            self.image = nil
+                        }
+                    }
+                }
             }
         }
     }

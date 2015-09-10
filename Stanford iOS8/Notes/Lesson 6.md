@@ -5,6 +5,8 @@
 * can't re-implement methods or properties that are already there
 * the properties you add can have no storage associated with them
 
+=====
+
 ### Delegate
 
 protocols:
@@ -26,6 +28,8 @@ Delegations:
 4. controller declares that it implements the protocol
 5. controller sets self as the delegation
 6. implement the protocol in controller
+
+=====
 
 ### Gestures
 
@@ -88,6 +92,7 @@ var numberOfTapsRequired: Int // single tap, double tap, etc.
 var numberOfTouchesRequired: Int // finger count
 ```
 
+=====
 
 ### Multiply MVC
 

@@ -17,8 +17,12 @@ display!.text = display!.text! + digit
 * optional, but always automatically unwrap it
 * implicitly unwrapped optional (隐式包解析) like auto explanation point
 
+=====
+
 ### Button arguments
 * enter button needs no arguments: it just push the key to stack
+
+=====
 
 ### Swift is a strongly typed, type inference language
 #### Using of Type Inference
@@ -44,6 +48,8 @@ case "×":performOperation({ (op1, op2) in
             })
 ```
 
+=====
+
 ### Computed Properties
 #### getter and setter in Swift
 ```swift
@@ -57,6 +63,8 @@ var displayValue: Double {
     }
 }
 ```
+
+=====
 
 ### Control Flow Operator in Swift
 #### Closure
@@ -94,6 +102,8 @@ if it is the only argument, you can move away the parentheses, like this:
 case "×":performOperation { $0 * $1 }
 ```
 
+=====
+
 ### Override Functions
 #### ATTENTION:
 ```swift
@@ -113,6 +123,8 @@ private func performOperation(operation: Double -> Double){
 ```
 We need to put **private** here, check here: [stackoverflow]( http://stackoverflow.com/questions/29457720/compiler-error-method-with-objective-c-selector-conflicts-with-previous-declara)
 And I think maybe that's because I'm using Xcode 7.
+
+=====
 
 ### autolayout
 brief introduction

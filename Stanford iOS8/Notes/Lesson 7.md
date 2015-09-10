@@ -9,6 +9,8 @@
 
 ##### segues always create new MVCs
 
+=====
+
 ### Preparing for a Segue
 
 ```swift
@@ -31,6 +33,8 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 ```
 
 * It is crucial to understand that this preparation is happening **BEFORE** outlets get set!
+
+=====
 
 ### Popover
 

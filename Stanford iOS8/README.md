@@ -38,3 +38,4 @@ Just some notes for reviewing and memorizing
 * [Psychologist](https://github.com/MandyXue/Learning-and-Playing/tree/master/Stanford%20iOS8/Psychologist)
 * [Autolayout](https://github.com/MandyXue/Learning-and-Playing/tree/master/Stanford%20iOS8/Autolayout)
 * [Cassini](https://github.com/MandyXue/Learning-and-Playing/tree/master/Stanford%20iOS8/Cassini)
+* [ShowSizeClass](https://github.com/MandyXue/Learning-and-Playing/tree/master/Stanford%20iOS8/ShowSizeClass)

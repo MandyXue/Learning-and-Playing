@@ -11,7 +11,7 @@
 - [x] 7. Multiple MVCs     
 - [x] 8. View Controller Lifecycle, Autola   
 - [x] 9. Scroll View and Multithreading  
-- [ ] 10. Table View  
+- [x] 10. Table View  
 - [ ] 11. Unwind Segues, Alerts, Timers, View Animation
 - [ ] 12. Dynamic Animation
 
@@ -30,6 +30,7 @@ Just some notes for reviewing and memorizing
 * [Lesson 7](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%207.md)
 * [Lesson 8](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%208.md)
 * [Lesson 9](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%209.md)
+* [Lesson 10](https://github.com/MandyXue/Learning-and-Playing/blob/master/Stanford%20iOS8/Notes/Lesson%2010.md)
 
 
 ## Demos
@@ -39,3 +40,4 @@ Just some notes for reviewing and memorizing
 * [Autolayout](https://github.com/MandyXue/Learning-and-Playing/tree/master/Stanford%20iOS8/Autolayout)
 * [Cassini](https://github.com/MandyXue/Learning-and-Playing/tree/master/Stanford%20iOS8/Cassini)
 * [ShowSizeClass](https://github.com/MandyXue/Learning-and-Playing/tree/master/Stanford%20iOS8/ShowSizeClass)
+* [Smashtag](https://github.com/MandyXue/Learning-and-Playing/tree/master/Stanford%20iOS8/Smashtag)

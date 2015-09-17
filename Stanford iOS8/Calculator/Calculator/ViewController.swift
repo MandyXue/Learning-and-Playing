@@ -37,13 +37,13 @@ class ViewController: UIViewController {
         }
         if let operation = sender.currentTitle{
             if let result = brain.performOperation(operation){
-                if (lastResult.isEmpty){
-                    self.result.text = brain.printProcess(result, lastResult: nil)
-                }else if(lastResult.count == 1){
-                    self.result.text = brain.printProcess(result, lastResult: lastResult.removeLast())
-                }else{
-                    self.result.text = brain.printProcess(lastResult.removeLast(), lastResult: lastResult.removeLast())
-                }
+//                if (lastResult.isEmpty){
+//                    self.result.text = brain.printProcess(result, lastResult: nil)
+//                }else if(lastResult.count == 1){
+//                    self.result.text = brain.printProcess(result, lastResult: lastResult.removeLast())
+//                }else{
+//                    self.result.text = brain.printProcess(lastResult.removeLast(), lastResult: lastResult.removeLast())
+//                }
                 displayValue = result
                 lastResult.append(result)
                 
@@ -94,11 +94,11 @@ class ViewController: UIViewController {
             }
         }else{
             if let result = brain.performOperation("-"){
-                if (lastResult.isEmpty){
-                    self.result.text = brain.printProcess(result, lastResult: nil)
-                }else{
-                    self.result.text = brain.printProcess(result, lastResult: lastResult.removeLast())
-                }
+//                if (lastResult.isEmpty){
+//                    self.result.text = brain.printProcess(result, lastResult: nil)
+//                }else{
+//                    self.result.text = brain.printProcess(result, lastResult: lastResult.removeLast())
+//                }
                 displayValue = result
                 lastResult.append(result)
                 

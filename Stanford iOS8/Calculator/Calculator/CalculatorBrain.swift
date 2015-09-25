@@ -10,7 +10,7 @@ import Foundation
 
 class CalculatorBrain {
     
-    private enum Op: Printable {
+    private enum Op: CustomStringConvertible {
         case Operand(Double)
         case UnaryOperation(String, Double -> Double, (Double -> String?)?)              //一元运算
         case BinaryOperation(String, Int, (Double,Double) -> Double, ((Double,Double) -> String?)?)    //二元运算
@@ -79,18 +79,6 @@ class CalculatorBrain {
         }
     }
     
-    var procedure: String {
-        get {
-            var (result,ops) = ("", opStack)
-            while ops.count > 0 {
-                var current : String?
-//                (current, ops, _)
-                
-            }
-            return ""
-        }
-    }
-    
     private var error: String?
     //has draw this to contents of it in a human readable form
     private func evaluate(ops: [Op]) -> (result: Double?, remainingOps: [Op]){
@@ -130,7 +118,7 @@ class CalculatorBrain {
     
     func evaluate() -> Double? {
         let (result,remainder) = evaluate(opStack)
-        println("\(opStack) = \(result) with \(remainder) left over")
+        print("\(opStack) = \(result) with \(remainder) left over")
         return result
     }
     
@@ -145,42 +133,4 @@ class CalculatorBrain {
         }
         return evaluate()
     }
-    
-    //TODO: 若运算数字都取自历史怎么办？
-//    func printProcess(thisResult: Double?, lastResult:Double?) -> String? {
-//        var opStackCopy = opStack
-//        var process:String = ""
-//        if(!opStackCopy.isEmpty){
-//            // get the operation
-//            let op = opStackCopy.removeLast()
-//            switch op {
-//            case .Operand(let operand):
-//                return "\(operand)"
-//            case .UnaryOperation(let operation, _):
-//                let operand = opStackCopy.removeLast()
-//                if knownOps[operand.description] == nil{
-//                    return "\(operation) \(operand) = \(thisResult!)"
-//                }else{
-//                    if(lastResult == nil){
-//                        return nil
-//                    }else{
-//                        return "\(operation) \(lastResult!) = \(thisResult!)"
-//                    }
-//                }
-//            case .BinaryOperation(let operation, _):
-//                let operand1 = opStackCopy.removeLast()
-//                let operand2 = opStackCopy.removeLast()
-//                if knownOps[operand2.description] == nil{
-//                    return "\(operand2) \(operation) \(operand1) = \(thisResult!)"
-//                }else{
-//                    if(lastResult == nil){
-//                        return nil
-//                    }else{
-//                        return "\(lastResult!) \(operation) \(operand1) = \(thisResult!)"
-//                    }
-//                }
-//            }
-//        }
-//        return nil
-//    }
 }

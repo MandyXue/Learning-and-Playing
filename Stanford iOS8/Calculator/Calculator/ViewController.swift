@@ -75,8 +75,10 @@ class ViewController: UIViewController {
     
     @IBAction func backspace() {
         if userIsInTheMiddleOfTypingANumber{
-            if (display.text! != ""){
-                display.text = dropLast(display.text!)
+            if (display.text != nil){
+                var displayChar = changeStrToChars(display.text)
+                displayChar.removeLast()
+                display.text = changeCharsToStr(displayChar)
             }else{
                 showAlert()
             }
@@ -87,10 +89,16 @@ class ViewController: UIViewController {
     
     @IBAction func changeSign() {
         if userIsInTheMiddleOfTypingANumber{
-            if first(display.text!) == "-" {
-                display.text = dropFirst(display.text!)
-            }else{
-                display.text = "-" + display.text!
+            if display.text != nil {
+                //get characters in display.text
+                var displayChar = changeStrToChars(display.text)
+                //get the first char
+                if displayChar.first == "-"{
+                    displayChar.removeAtIndex(0)
+                } else {
+                    displayChar.insert("-", atIndex: 0)
+                }
+                display.text = changeCharsToStr(displayChar)
             }
         }else{
             if let result = brain.performOperation("-"){
@@ -144,7 +152,7 @@ class ViewController: UIViewController {
     
     //MARK: customer functions
     //alert view
-    func showAlert(){
+    private func showAlert(){
         //if displayValue is nil, show an alert view
         let alertController = UIAlertController(title: "Wrong input", message: "Please check if you input wrong things.", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -152,5 +160,28 @@ class ViewController: UIViewController {
         display.text = ""
     }
     
+    private func changeCharsToStr(chars: [Character]) -> String? {
+        if chars.isEmpty {
+            return nil
+        } else {
+            var resultStr = ""
+            for char in chars {
+                resultStr.append(char)
+            }
+            return resultStr
+        }
+    }
+    
+    private func changeStrToChars(str: String?) -> [Character] {
+        if str != nil {
+            var chars = [Character]()
+            for char in str!.characters {
+                chars.append(char)
+            }
+            return chars
+        } else {
+            return [Character]()
+        }
+    }
 }
 

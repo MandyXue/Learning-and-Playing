@@ -392,6 +392,7 @@
 				332F091F1BF5B6C7004BA66B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		332F09201BF5B6C7004BA66B /* Build configuration list for PBXNativeTarget "TableViewIndexTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +401,7 @@
 				332F09221BF5B6C7004BA66B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

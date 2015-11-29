@@ -14,6 +14,7 @@
 		332F09191BF5B6C7004BA66B /* TableViewIndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332F09181BF5B6C7004BA66B /* TableViewIndexTests.swift */; };
 		332F09241BF5B734004BA66B /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332F09231BF5B734004BA66B /* BookTableViewController.swift */; };
 		332F09251BF5C455004BA66B /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332F09231BF5B734004BA66B /* BookTableViewController.swift */; };
+		337494D31BFAC4F700F20C22 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337494D21BFAC4F700F20C22 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		332F09181BF5B6C7004BA66B /* TableViewIndexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewIndexTests.swift; sourceTree = "<group>"; };
 		332F091A1BF5B6C7004BA66B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		332F09231BF5B734004BA66B /* BookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
+		337494D21BFAC4F700F20C22 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				332F090A1BF5B6C7004BA66B /* Assets.xcassets */,
 				332F090C1BF5B6C7004BA66B /* LaunchScreen.storyboard */,
 				332F090F1BF5B6C7004BA66B /* Info.plist */,
+				337494D21BFAC4F700F20C22 /* Book.swift */,
 			);
 			path = TableViewIndex;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			files = (
 				332F09241BF5B734004BA66B /* BookTableViewController.swift in Sources */,
 				332F09041BF5B6C7004BA66B /* AppDelegate.swift in Sources */,
+				337494D31BFAC4F700F20C22 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

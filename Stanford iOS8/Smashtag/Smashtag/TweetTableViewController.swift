@@ -17,20 +17,22 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         refresh(refreshControl!)
     }
     
-    @IBAction func refresh(sender: UIRefreshControl) {
+    @IBAction func refresh(sender: UIRefreshControl?) {
         if searchText != nil {
             if let request = nextRequestToAttempt {
                 request.fetchTweets { (newTweets) -> Void in
                     dispatch_async(dispatch_get_main_queue()) { () -> Void in
                         if newTweets.count > 0 {
+                            self.lastSuccessfulRequest = request
                             self.tweets.insert(newTweets, atIndex: 0)
                             self.tableView.reloadData()
                         }
+                        sender?.endRefreshing()
                     }
                 }
             }
         } else {
-            sender.endRefreshing()
+            sender?.endRefreshing()
         }
     }
     
